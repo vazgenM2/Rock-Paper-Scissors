@@ -1,0 +1,468 @@
+@import url("https://fonts.googleapis.com/css2?family=Sniglet:wght@400;800&display=swap");
+html {
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Sniglet', cursive;
+  background-color: #303A52;
+  color: #fff;
+}
+
+.wrapper {
+  width: 100vw;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0px auto;
+}
+
+.start {
+  width: 100%;
+  height: 100%;
+  margin-top: 120px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 800px) {
+  .start {
+    margin-top: 50px;
+  }
+}
+
+.start .title {
+  margin: 10px 10px 30px;
+  font-size: 50px;
+}
+
+@media (max-width: 700px) {
+  .start .title {
+    font-size: 40px;
+    max-width: 80%;
+    text-align: center;
+  }
+}
+
+.start .your-choose {
+  width: 60%;
+  min-height: 150px;
+  margin: 20px 0px 40px;
+  padding: 20px 5px;
+  background-color: #3f4d6e;
+  border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+@media (max-width: 830px) {
+  .start .your-choose .elem {
+    margin: 20px 15px;
+  }
+}
+
+@media (max-width: 535px) {
+  .start .your-choose .elem {
+    margin-bottom: 35px;
+  }
+}
+
+.start .your-choose .elem {
+  width: 110px;
+  height: 110px;
+  cursor: pointer;
+  border-radius: 50%;
+  -webkit-transition: all ease-in 0.2s;
+  transition: all ease-in 0.2s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.start .your-choose .elem::before {
+  content: 'Rock';
+  z-index: 20;
+  position: absolute;
+  bottom: -40px;
+  margin-top: 20px;
+}
+
+.start .your-choose .elem.paper::before {
+  content: 'Paper';
+}
+
+.start .your-choose .elem.scissors::before {
+  content: 'Scissors';
+}
+
+.start .your-choose .elem.active::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 4px solid #ffffff;
+  border-radius: 50%;
+  background-color: #ffffff20;
+  padding: 10px;
+}
+
+.start .your-choose .elem:hover {
+  opacity: 0.8;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.start .your-choose .elem:hover img {
+  -webkit-transform: rotate3d(1, 0, 1, 360deg);
+          transform: rotate3d(1, 0, 1, 360deg);
+}
+
+.start .your-choose .elem.rock {
+  background-color: #d51818;
+  border: 10px solid #970e0e;
+}
+
+.start .your-choose .elem.paper {
+  background-color: #183ed5;
+  border: 10px solid #073283;
+}
+
+.start .your-choose .elem.scissors {
+  background-color: #e4c514;
+  border: 10px solid #8a880a;
+}
+
+.start .your-choose .elem img {
+  -webkit-transition: all ease-in 0.3s;
+  transition: all ease-in 0.3s;
+  width: 60%;
+  opacity: 0.9;
+}
+
+.start .go {
+  width: 60%;
+  background-color: #9E579D;
+  height: 60px;
+  margin-bottom: 20px;
+  border-radius: 30px;
+  font-size: 25px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  -webkit-transition: all ease-in 0.2s;
+  transition: all ease-in 0.2s;
+  border: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.start .go::before, .start .go::after {
+  content: '';
+  left: 0px;
+  top: 0px;
+  border-radius: 30px;
+  position: absolute;
+  width: 30%;
+  height: 10px;
+  background-color: #ae74ad;
+  -webkit-transition: all ease-in 0.2s;
+  transition: all ease-in 0.2s;
+}
+
+.start .go::after {
+  left: auto;
+  top: auto;
+  right: 0;
+  bottom: 0;
+}
+
+.start .go:hover {
+  background-color: #9b419a;
+}
+
+.start .go:hover::before {
+  top: 60px;
+  background-color: #cc4aca;
+}
+
+.start .go:hover::after {
+  bottom: 60px;
+  background-color: #cc4aca;
+}
+
+.game {
+  display: none;
+  width: 100%;
+  height: 100%;
+  margin-top: 120px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 740px) {
+  .game {
+    margin-top: 50px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+@media (max-width: 540px) {
+  .game {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-top: 20px;
+  }
+}
+
+.game .board {
+  width: 60%;
+  min-height: 150px;
+  margin: 20px 0px 40px;
+  padding: 20px 5px;
+  background-color: #3f4d6e;
+  border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  overflow: hidden;
+}
+
+@media (max-width: 740px) {
+  .game .board {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: auto;
+    padding: 20px;
+    min-height: 420px;
+  }
+}
+
+.game .board .vs {
+  opacity: 0;
+  -webkit-transition: all ease 0.4s;
+  transition: all ease 0.4s;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin-bottom: 20px;
+  font-size: 50px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.game .board .elem {
+  width: 110px;
+  height: 110px;
+  cursor: pointer;
+  border-radius: 50%;
+  -webkit-transition: all ease-in 0.2s;
+  transition: all ease-in 0.2s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.game .board .elem::before {
+  content: 'Rock';
+  z-index: 20;
+  position: absolute;
+  bottom: -40px;
+  margin-top: 20px;
+}
+
+.game .board .elem#paper::before {
+  content: 'Paper';
+}
+
+.game .board .elem#scissors::before {
+  content: 'Scissors';
+}
+
+.game .board .elem:hover {
+  opacity: 0.8;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.game .board .elem#rock {
+  background-color: #d51818;
+  border: 10px solid #970e0e;
+}
+
+.game .board .elem#paper {
+  background-color: #183ed5;
+  border: 10px solid #073283;
+}
+
+.game .board .elem#scissors {
+  background-color: #e4c514;
+  border: 10px solid #8a880a;
+}
+
+.game .board .elem img {
+  -webkit-transition: all ease-in 0.3s;
+  transition: all ease-in 0.3s;
+  width: 60%;
+  opacity: 0.9;
+}
+
+.game .board .comElem, .game .board .userElem {
+  -webkit-transition: all ease 0.6s;
+  transition: all ease 0.6s;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+@media (max-width: 740px) {
+  .game .res {
+    width: 30%;
+    text-align: center;
+    margin-left: 50px;
+  }
+}
+
+@media (max-width: 520px) {
+  .game .res {
+    margin-left: 0;
+  }
+  .game .res .next {
+    width: 100%;
+  }
+}
+
+.game .who-win {
+  font-size: 35px;
+  margin: 0;
+}
+
+.game .who-win span {
+  opacity: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transition: all ease-out 0.3s;
+  transition: all ease-out 0.3s;
+}
+
+.game .next {
+  width: 90%;
+  margin: 0px auto;
+  background-color: #3A5AE8;
+  height: 60px;
+  border-radius: 30px;
+  font-size: 25px;
+  color: #fff;
+  font-weight: bold;
+  opacity: 0;
+  cursor: pointer;
+  -webkit-transition: all ease-in 0.2s;
+  transition: all ease-in 0.2s;
+  border: 0;
+  margin-top: 60px;
+  overflow: hidden;
+  position: relative;
+}
+
+.game .next:hover {
+  background-color: #1476FF;
+}
+
+.game .next:hover::before {
+  top: 60px;
+  background-color: #526eec;
+}
+
+.game .next:hover::after {
+  bottom: 60px;
+  background-color: #526eec;
+}
+
+.game .next::before, .game .next::after {
+  content: '';
+  left: 0px;
+  top: 0px;
+  border-radius: 30px;
+  position: absolute;
+  width: 30%;
+  height: 10px;
+  background-color: #2e4cd0;
+  -webkit-transition: all ease-in 0.2s;
+  transition: all ease-in 0.2s;
+}
+
+.game .next::after {
+  left: auto;
+  top: auto;
+  right: 0;
+  bottom: 0;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+	<div class="wrapper">
+		<div class="container">
+			<div class="start">
+				<p class="title">Play RPS with computer</p>
+				<div class="your-choose">
+					<div class="rock elem active" data-value="rock">
+						<img src="./img/rock.png" alt="">
+					</div>
+					<div class="paper elem" data-value="paper">
+						<img src="./img/paper.png" alt="">
+					</div>
+					<div class="scissors elem" data-value="scissors">
+						<img src="./img/scissors.png" alt="">
+					</div>
+				</div>
+				<button class="go" onclick="start()">Go!</button>
+			</div>
+
+			<div class="game">
+				<div class="board">
+					<div class="elem userElem">
+						<img src="" alt="">
+					</div>
+					<p class="vs">VS</p>
+					<div class="elem comElem">
+						<img src="" alt="">
+					</div>
+				</div>
+				<div class="res">
+					<p class="who-win">
+						<span>You Win!</span>
+					</p>
+					<button class="next" onclick="again()">Again</button>
+				</div>
+			</div>
+
+
+		</div>
+	</div>
+	<script src="./main.js"></script>
+</body>
+
+</html>
